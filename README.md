@@ -8,6 +8,10 @@ Simple anti-plagiarism detection tool with local library
 4. Levenshtein Distance
 5. TF*IDF
 
-To start, install pip install -r requirements.txt.
-#
+# Requirements
+pip install -r requirements.txt.
+
+# Starting
+Run plag.py to start.
+
 ![Tool MainPage Logo](/images/MainPage.png)
