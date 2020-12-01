@@ -1,6 +1,7 @@
 # antiplagiarism
 Simple anti-plagiarism detection tool with local library
-Implemented methods:
+
+# Implemented methods:
 1. Shingles
 2. Cosine
 3. Moodle Crot
