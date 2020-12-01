@@ -9,3 +9,5 @@ Simple anti-plagiarism detection tool with local library
 5. TF*IDF
 
 To start, install pip install -r requirements.txt.
+#
+![Tool MainPage Logo](/images/MainPage.png)
