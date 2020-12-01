@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Перевірка текстів на плагіат онлайн</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/menu.css"/>
+        <link rel="stylesheet" href="css/pretty-checkbox.min.css"/>
+            <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    </head>
+        <header>
+        <div class="head">
+            <div class="logo"><img src="./images/logo3.png"></div>
+            <div class="header-right">
+                <div class="cssmenu">
+                    <ul>
+                        <li class="active"><a href="#">Головна</a></li>
+                        <li><a href="#">Підтримка</a></li>
+                        <li><a href="#">Про сервіс</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="body-content">
+            <p>Новий безкоштовний сервіс пошуку плагіату, який використовує комплекс методів аналізу.</p>
+        </div>
+<h2>Аналіз тексту на плагіат онлайн</h2>
+<div class="container" id="container">
+        <div class="form-container checkfile-container">
+                <form action="#">
+                        <h1>Завантажити файл</h1>
+                        <span>.TXT, .DOC, .DOCX</span>
+                        <input type="file" />
+                        <button>Завантажити</button>
+                </form>
+        </div>
+        <div class="form-container checktext-container">
+                <form action="#">
+
+                        <h1>Перевірити текст</h1>
+                        <span>додайте текст у форму нижче</span>
+                        <textarea rows="1" cols="10">
+            </textarea>
+                        <button>Відправити</button>
+                </form>
+        </div>
+        <div class="overlay-container">
+                <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                                <h1>Перевірити текст?</h1>
+                                <p>Для перевірки тексту потрібно додати його у форму.</p>
+                                <button class="ghost" id="addtext">Додати текст</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                                <h1>Завантажити документ</h1>
+                                <p>Додайте докуомент у форматі .TXT, .DOC, .DOCX на перевірку.</p>
+                                <button class="ghost" id="addfile">Додати</button>
+                        </div>
+                </div>
+        </div>
+</div>
+        <div class="parameters-menu">
+            <div class="parameters-content">
+          <div class="pretty p-default">
+        <input type="checkbox" value="1" />
+              <div class="state">
+                  <label>Унікальність тексту з використанням спілок</label>
+              </div>
+          </div>
+                <br/><br/>
+          <div class="pretty p-default">
+              <input type="checkbox" value="2" />
+              <div class="state">
+                  <label>Унікальність тексту з використанням прийменників</label>
+              </div>
+          </div>
+            </div>
+        </div>
+<script src="scripts.js"></script>
+<script>
+    $("textarea").focus(function(){
+    $("textarea").animate({ height: "60%" }, 500);
+});
+</script>
+</body>
+<footer>
+    (c) MyCorp 2019
+</footer>
+</html>

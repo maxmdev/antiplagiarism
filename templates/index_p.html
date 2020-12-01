@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Перевірка текстів на плагіат онлайн</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="stylesheet" href="/css/menu.css"/>
+        <link rel="stylesheet" href="/css/pretty-checkbox.min.css"/>
+            <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    </head>
+        <header>
+        <div class="head">
+            <div class="logo"><img src="./images/logo3.png"></div>
+            <div class="header-right">
+                <div class="cssmenu">
+                    <ul>
+                        <li class="active"><a href="#">Головна</a></li>
+                        <li><a href="#">Підтримка</a></li>
+                        <li><a href="/upload">Завантажити</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="body-content">
+            <p>Новий безкоштовний сервіс пошуку плагіату, який використовує комплекс методів аналізу.</p>
+        </div>
+<h2>Аналіз тексту на плагіат онлайн</h2>
+<div class="container" id="container">
+        <div class="form-container checkfile-container">
+                <form action="/upload_file" method="post" enctype="multipart/form-data">
+                        <h1>Завантажити файл</h1>
+                        <span>.TXT, .DOC, .DOCX</span>
+                        <input type="file" name="file"/>
+                        <button>Завантажити</button>
+                </form>
+        </div>
+        <div class="form-container checktext-container">
+                        <h1>Перевірити текст</h1>
+                        <span>додайте текст у форму нижче</span>
+                        <textarea id="query" rows="1" cols="10">{{query}}</textarea>
+                        <button onclick="posttext()">Відправити</button>
+        </div>
+        <div class="overlay-container">
+                <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                                <h1>Перевірити текст?</h1>
+                                <p>Для перевірки тексту потрібно додати його у форму.</p>
+                                <button class="ghost" id="addtext">Додати текст</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                                <h1>Завантажити документ</h1>
+                                <p>Додайте докуомент у форматі .TXT, .DOC, .DOCX на перевірку.</p>
+                                <button class="ghost" id="addfile">Додати</button>
+                        </div>
+                </div>
+        </div>
+</div>
+        <div class="parameters-menu">
+            <div class="parameters-content-left">
+                <div class="selects">
+                    <select>
+                        <option>Оберіть метод роспізнавання</option>
+                        <option value="complex" selected>Комплексний метод</option>
+                        <option value="frequency-cosine">Метод частоти слова і косинусів</option>
+                        <option value="basic-shingl">Метод шинглів</option>
+                        <option value="sorted-shingl">Метод шинглів із сортуванням</option>
+                        <option value="moodle-crot">Метод Moodle Crot</option>
+                        <option value="levenshtein">Метод Lavenshtein Distance</option>
+                    </select>
+                </div>
+            </div>
+            <div class="parameters-content-right">
+          <div class="pretty p-default">
+        <input id="union" type="checkbox" value="1" />
+              <div class="state">
+                  <label>Унікальність тексту з урахуванням спілок</label>
+              </div>
+          </div>
+                <br/><br/>
+          <div class="pretty p-default">
+              <input id="pretext" type="checkbox" value="2" />
+              <div class="state">
+                  <label>Унікальність тексту з урахуванням прийменників</label>
+              </div>
+          </div>
+                </div>
+        </div>
+            <div class="block-results">
+                <div class="content">
+                    <div class="param">
+                    Результат аналізу: <div class="percent"> {{output}} </div> плагіату.
+                    </div>
+                    {% if filename %}
+                    <div class="file">Більшість збігів з файлом: {{filename}}.</div>
+                    {% else %}
+                    <div class="file">Збігів з файлами бази не знайдено.</div>
+                    {% endif %}
+                </div>
+            </div>
+        <script src="/js/poster.js"></script>
+        <script src="/js/scripts.js"></script>
+<script>
+    $("textarea").focus(function(){
+    $("textarea").animate({ height: "60%" }, 500);
+});
+</script>
+</body>
+<footer>
+    (c) MyCorp 2019
+</footer>
+</html>
